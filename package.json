@@ -1,0 +1,11 @@
+{
+  "name": "input-amount",
+  "version": "1.0.0",
+  "description": "my sample npm package for input amount",
+  "main": "index.js",
+  "author": "Roshan Maddumage",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
