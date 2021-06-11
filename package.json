@@ -12,7 +12,7 @@
 		"build:esm": "tsc",
 		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
 		"clean": "rm -rf lib/esm lib/cjs",
-		"postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
+		"deploy": "npm version patch && git push --tags origin main && npm publish"
 	},
 	"dependencies": {
 		"autonumeric": "^4.4.0"
