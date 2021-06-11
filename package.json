@@ -1,16 +1,18 @@
 {
 	"name": "input-amount",
-	"version": "1.0.1",
-	"description": "my sample npm package for input amount",
+	"version": "1.1.0",
+	"description": "A Input Amount react component package which based on the Autonumeric and inspired by react-numeric",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
 	"types": "./lib/esm/index.d.ts",
-	"author": "Roshan Maddumage",
+	"author": "Roshan Maddumage <uomroshan@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "yarn build:esm && yarn build:cjs",
+		"build": "yarn clean && yarn build:esm && yarn build:cjs",
 		"build:esm": "tsc",
-		"build:cjs": "tsc --module commonjs --outDir lib/cjs"
+		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
+		"clean": "rm -rf lib/esm lib/cjs",
+		"postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
 	},
 	"dependencies": {
 		"autonumeric": "^4.4.0"
