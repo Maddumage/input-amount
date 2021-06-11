@@ -1,6 +1,6 @@
 {
 	"name": "input-amount",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "A Input Amount react component package which based on the Autonumeric and inspired by react-numeric",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
